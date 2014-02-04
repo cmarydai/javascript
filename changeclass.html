@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>bounce demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <style>
+div {
+  width: 50px;
+  height: 50px;
+}
+.active {
+  width: 100px;
+  height: 100px;
+  background: #ffcc00;
+  opacity: .9;
+}
+.inactive {
+  width: 50px;
+  height: 50px;
+  background: magenta;
+  opacity: .9;
+}
+.dropped {
+  border: 2px solid cyan;
+  }
+.highlighted {
+    border: 2px solid blue;
+  }
+.hovered {
+    border: 2px solid red;
+  }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<p>Click the box.</p>
+<div id="toggle2" class="active"></div>
+<div id="toggle" class="inactive"></div>
+<script>
+$(document).ready(
+  function() {
+    $( '#toggle' ).draggable({ stack: '#toggable' }).click(
+      function() {
+        if  ($(this).hasClass('active')) {
+          $(this).addClass('inactive', 500).removeClass('active', 1000);
+        } else {
+          $(this).addClass('active').removeClass('inactive', 500);
+        }
+      }
+    );
+
+    var $t2 = $('#toggle2');
+
+    $t2.droppable({
+      activeClass: 'highlighted',
+      hoverClass: 'hovered',
+      drop: function( event, ui) {
+        $(this)
+          .addClass('ui-state-highlight dropped')
+          .html('dropped');
+      }
+    });
+
+    $t2.click(
+      function() {
+        if ($(this).hasClass('dropped')) {
+          $(this).hide('explode');
+        }
+      }
+    );
+
+    $t2.resizable();
+  }
+);
+</script>
+ 
+</body>
+</html>

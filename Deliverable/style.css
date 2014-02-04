@@ -1,0 +1,42 @@
+#wrapper {
+	margin: 0 auto 0 auto;
+	width: 445px;
+}
+
+#arrowslide {
+	border: 3px dashed green;
+}
+
+#arrowslide ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: #002039;
+}
+
+#arrowslide li {
+	display: inline-block;
+	text-transform: uppercase;
+	margin: 10px 20px 10px 20px;
+	border: 2px dotted magenta;
+}
+
+#arrowslide li a {
+	color: #FFF;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#arrowslide li a:hover {
+	border-bottom: 2px solid #00447a;
+}
+
+#arrow {
+	background-image: url('arrow.png');
+	background-repeat: no-repeat;
+	background-position: 47px bottom;
+	height: 11px;
+	width: 445px;
+}

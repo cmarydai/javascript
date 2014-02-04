@@ -1,0 +1,11 @@
+On the page load, we need to load data.html to get the content of the madlib class
+
+Look through that content and prompt the user for the words needed, show the types
+
+On user click, we need to generate the displayed verison of the text with words replaced.
+
+	<p><label for="noun1">Enter a noun:</label>
+		<input type="text" value="" id="noun1" placeholder="person, place, or thing" required="required"></p>
+
+	<p><label for="adjective1">Enter a adjective:</label>
+		<input type="text" value="" id="adjective1" placeholder="person, place, or thing" required="required"></p>

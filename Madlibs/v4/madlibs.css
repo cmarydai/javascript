@@ -1,0 +1,17 @@
+body {
+	font-family: 'Myriad Pro';
+	background: #EEE;
+}
+
+.word {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FF0080;
+	text-decoration: underline;
+	display: inline-block;
+	padding: 0 5px 0 5px;
+}
+
+#raw {
+	display: none;
+}

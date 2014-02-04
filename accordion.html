@@ -1,0 +1,116 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/trontastic/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script>
+  $(document).ready(
+    function() {
+
+      $('a').button();
+
+      $('#format').buttonset();
+
+      $( "#datepicker" ).datepicker();
+
+      var icon_options = {
+        header: 'ui-icon-locked',
+        activeHeader: 'ui-icon-unlocked'
+      };
+      $( "#testing" ).accordion(
+        {
+        collapsible: true,
+        icons: icon_options,
+        heightStyle: "content",
+        header: "> div > h3"
+        }
+      ).sortable(
+        {
+          axis: "y",
+          handle: "h3",
+          stop: function( event, ui ) {
+            // IE doesn't register the blur when sorting
+            // so trigger focusout handlers to remove .ui-state-focus
+            ui.item.children( "h3" ).triggerHandler( "focusout" );
+        }
+      }
+      );
+    }
+  );  
+  </script>
+</head>
+<body>
+<p>Date: <input type="text" id="datepicker" /></p>
+ 
+
+ <p><a href="http://9gag.com">Go to 9Gag</a></p>
+
+<div id="format">
+  <input type="checkbox" id="check1" /><label for="check1">B</label>
+  <input type="checkbox" id="check2" /><label for="check2">I</label>
+  <input type="checkbox" id="check3" /><label for="check3">U</label>
+</div>
+
+<div id="testing">
+  <div class="group">
+  <h3>Section 1</h3>
+  <div>
+    <p>
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+    </p>
+    </div>
+  </div>
+  <div class="group">
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+  </div>
+  <div class="group">
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  </div>
+  <div class="group">
+  <h3>Section 4</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+  </div>
+ 
+ 
+</body>
+</html>
